@@ -1,0 +1,18 @@
+[general]
+framerate = 60
+bars = 10
+
+autosens = 1
+noise_reduction = 0.1
+gravity = 0.2
+
+[input]
+method = pulse
+source = bluez_output.40_B3_FA_50_EB_78.1.monitor
+
+[output]
+method = raw
+data_format = ascii
+channels = mono
+ascii_max_range = 7
+bar_delimiter = " "
