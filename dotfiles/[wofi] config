@@ -1,0 +1,7 @@
+show = drun
+term = kitty
+hide_search = false
+prompt = Run:
+normal_window = true
+width = 450
+height = 350
