@@ -1,0 +1,142 @@
+/* ========== Base ========== */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
+    font-size: 11px;
+    color: #c0caf5; /* Tokyonight foreground */
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+
+window#waybar > box {
+    margin: 6px 8px 0px 8px;
+}
+
+/* ========== Generic module “chips” ========== */
+
+#clock,
+#network,
+#battery,
+#pulseaudio,
+#custom-mpris,
+#cpu,
+#custom-gpu,
+#custom-cava,
+#workspaces button {
+    background: #1a1b26;        /* Tokyonight bg */
+    border-radius: 999px;       /* pill shape */
+    padding: 3px 10px;
+    margin: 0 4px;
+    border: 1px solid #24283b;  /* subtle border */
+}
+
+/* hover / active states for generic modules (non-workspace) */
+#clock:hover,
+#network:hover,
+#battery:hover,
+#pulseaudio:hover,
+#custom-mpris:hover,
+#cpu:hover,
+#custom-gpu:hover,
+#custom-cava:hover {
+    background: #24283b;
+}
+
+/* ========== Workspaces ========== */
+
+#workspaces {
+    margin-right: 6px;
+}
+
+/* base workspace chip */
+#workspaces button {
+    padding: 3px 8px;
+    background: #1a1b26;
+    border-radius: 999px;
+    border: 1px solid #24283b;
+    color: #c0caf5;
+}
+
+/* hover only when not active */
+#workspaces button:not(.active):hover {
+    background: #24283b;
+}
+
+/* ACTIVE (current) workspace */
+#workspaces button.active {
+    background: #7aa2f7;        /* Tokyonight blue */
+    color: #1a1b26;
+    border-color: #7aa2f7;
+}
+
+/* keep active color on hover */
+#workspaces button.active:hover {
+    background: #7aa2f7;
+}
+
+/* Urgent workspace */
+#workspaces button.urgent {
+    background: #f7768e;        /* Tokyonight red */
+    color: #1a1b26;
+    border-color: #f7768e;
+}
+
+/* ========== Individual module tweaks ========== */
+
+/* Audio volume */
+#pulseaudio.muted {
+    background: #414868;
+    border-color: #414868;
+    color: #9aa5ce;
+}
+
+/* Battery states */
+#battery.charging {
+    background: #9ece6a;
+    color: #1a1b26;
+    border-color: #9ece6a;
+}
+
+#battery.critical {
+    background: #f7768e;
+    color: #1a1b26;
+    border-color: #f7768e;
+}
+
+/* Now playing */
+#custom-mpris {
+    min-width: 120px;
+    padding: 3px 10px;
+}
+
+/* Audio visualizer */
+#custom-cava {
+    min-width: 50px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+/* CPU */
+#cpu {
+    min-width: 50px;
+}
+
+/* GPU */
+#custom-gpu {
+    min-width: 60px;
+}
+
+#backlight {
+    background: #1a1b26;
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin: 0 4px;
+    border: 1px solid #24283b;
+}
+
+#backlight:hover {
+    background: #24283b;
+}
