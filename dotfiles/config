@@ -1,0 +1,69 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "battery",
+    "network",
+    "backlight"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "custom/mpris",
+    "custom/cava"
+  ],
+
+  "clock": {
+    "format": " {:%Y-%m-%d  %I:%M %p}",
+    "tooltip-format": "{:%A, %d %B %Y  %I:%M %p}"
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰖪",
+    "tooltip": true,
+    "on-click": "nm-connection-editor"
+  },
+
+  "backlight": {
+    "format": "󰛨 {percent}%",  
+    "device": "intel_backlight"
+  },
+
+  "pulseaudio": {
+    "format": " {volume:2}%",
+    "format-muted": " mute",
+    "tooltip": true,
+    "on-click": "pavucontrol"
+  },
+
+  "custom/mpris": {
+    "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo 'No audio playing'",
+    "interval": 2,
+    "return-type": "string",
+    "format": "󰎈 {}",
+    "max-length": 20,
+    "tooltip": false,
+    "on-click": "playerctl play-pause"
+  },
+
+  "custom/cava": {
+    "exec": "~/.config/waybar/cava.sh",
+    "return-type": "raw",
+    "interval": 0,
+    "format": "{}"
+  },
+
+  "battery": {
+    "format": " {capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "tooltip": true
+  }
+}
